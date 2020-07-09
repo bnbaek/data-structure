@@ -1,5 +1,6 @@
 package net.openu.structure.collection.list.linkedlist.implementation;
 
+
 /**
  * Created by iopenu@gmail.com on 2020/07/09
  * Github : https://github.com/bnbaek
@@ -107,8 +108,32 @@ public class LinkedList {
 
         return x;
 
-
     }
+
+    public int size() {
+        return size;
+    }
+
+    public Object get(int index) {
+        return node(index).data;
+    }
+
+    public int indexOf(Object data) {
+        Node temp = head;
+
+        int index = 0;
+
+        while (temp.data != data) {
+            temp = temp.next;
+            index++;
+            if (temp == null) {
+                return -1;
+            }
+        }
+
+        return index;
+    }
+
 
     @Override
     public String toString() {
@@ -123,5 +148,37 @@ public class LinkedList {
         }
         str += temp.data;
         return str + "]";
+    }
+
+
+    public ListIterator listIterator() {
+        return new ListIterator();
+    }
+
+
+    public class ListIterator {
+        private Node next;
+        private Node lastReturned;
+        private int nextIndex;
+
+        public ListIterator() {
+            next = head;
+            nextIndex = 0;
+        }
+
+        public Object next() {
+            lastReturned = next;
+            next = next.next;
+            nextIndex++;
+            return lastReturned.data;
+        }
+
+        public int getNextIndex() {
+            return nextIndex;
+        }
+
+        public boolean hasNext() {
+            return size > nextIndex;
+        }
     }
 }

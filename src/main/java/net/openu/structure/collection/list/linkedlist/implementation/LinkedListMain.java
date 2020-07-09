@@ -1,5 +1,7 @@
 package net.openu.structure.collection.list.linkedlist.implementation;
 
+import java.util.Arrays;
+
 /**
  * Created by iopenu@gmail.com on 2020/07/09
  * Github : https://github.com/bnbaek
@@ -23,8 +25,10 @@ public class LinkedListMain {
         System.out.println(numbers.removeLast());
         System.out.println("toString = "+numbers);
 
+        LinkedList.ListIterator listIterator = numbers.listIterator();
 
-
-
+        while (listIterator.hasNext()){
+            System.out.println(listIterator.next());
+        }
     }
 }
