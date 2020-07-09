@@ -1,0 +1,19 @@
+what is bio-O?
+
+- mathematical notation that describes algorithm efficiency
+- Time & space complexity
+- Describes the growth rate of algorithms
+
+
+O(1) constant time - 입력데이터에 상관없이 일정한 시간이 걸리는 것
+O(n) linear time - ex- loop 데이터가 증가함에 따라 처리에따라 시간이 증가
+O(n2) quadratic time  - n의 이중 루프 (면적)
+O(nm) - n loop 안에 m 루
+
+O(n3) - n의 3중 loop 큐브
+O(2n) - exponential time fibonacci
+O(logn) - binary search
+O(Sqrth(n)) - 제곱 : 100의 제곱근 = 10  100 = 10 * 10
+
+런닝타임의 러닝타입을 재는것이아님 데이터가 증가에 따 처리시간의 증가유을 찾는것
+즉 o(2n)  => o(n), o(n2+n2) => o(n2)
