@@ -173,6 +173,31 @@ public class LinkedList {
             return lastReturned.data;
         }
 
+        public void add(Object data) {
+            Node node = new Node(data);
+
+            if (lastReturned == null) {
+                head = node;
+            } else {
+                lastReturned.next = node;
+            }
+            node.next = next;
+
+            lastReturned = node;
+            nextIndex++;
+            size++;
+
+        }
+
+        public void remove() {
+            if (nextIndex == 0) {
+                throw new IllegalStateException();
+            }
+            LinkedList.this.remove(nextIndex - 1);
+            nextIndex--;
+        }
+
+
         public int getNextIndex() {
             return nextIndex;
         }

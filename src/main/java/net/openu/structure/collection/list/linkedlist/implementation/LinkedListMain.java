@@ -12,6 +12,7 @@ public class LinkedListMain {
         numbers.addLast(10);
         numbers.addLast( 20);
         numbers.addLast(30);
+        numbers.addLast(40);
 
         numbers.add(100,70);
         System.out.println("numbers.node = " + numbers.node(2));
@@ -27,8 +28,20 @@ public class LinkedListMain {
 
         LinkedList.ListIterator listIterator = numbers.listIterator();
 
-        while (listIterator.hasNext()){
-            System.out.println(listIterator.next());
+//        while (listIterator.hasNext()){
+//            System.out.println(listIterator.next());
+//        }
+//        listIterator.add(5);
+//        System.out.println("toString = "+numbers);
+//        listIterator.next();
+//        listIterator.add(15);
+//        System.out.println("toString = "+numbers);
+
+        System.out.println("toString = "+numbers);
+        while(listIterator.hasNext()){
+            if((int)listIterator.next() == 30)
+                listIterator.remove();
         }
+        System.out.println("toString = "+numbers);
     }
 }
